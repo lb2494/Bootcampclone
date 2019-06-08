@@ -19,10 +19,24 @@ from . import settings
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',views.Home.as_view(),name='home'),
-
+    path('admin/',
+         admin.site.urls),
+    path('',
+         views.homePage.as_view(),
+         name='home'),
+    path('accounts/',
+         include('accounts.urls',
+                 namespace='accounts')),
+    path('test/',
+         views.TestPage.as_view(),
+         name='test'),
+    path('thanks',
+         views.ThanksPage.as_view(),
+         name='thanks'),
+    path('accounts/',
+         include('django.contrib.auth.urls')),
 ]
+
 
 if settings.DEBUG:
     import debug_toolbar

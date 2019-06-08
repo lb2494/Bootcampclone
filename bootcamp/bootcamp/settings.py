@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'bootstrap4',
     'accounts',
 ]
 
@@ -125,3 +126,7 @@ STATIC_URL = '/static/'
 
 
 INTERNAL_IPS = ['127.0.0.1']
+
+LOGIN_REDIRECT_URL = 'test'
+
+LOGOUT_REDIRECT_URL = 'thanks'
