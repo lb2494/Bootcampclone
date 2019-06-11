@@ -15,6 +15,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
+STATIC_DIR = os.path.join(BASE_DIR,'static')
+MEDIA_DIR=os.path.join(BASE_DIR,'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -59,7 +61,7 @@ ROOT_URLCONF = 'bootcamp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [TEMPLATES_DIR,STATIC_DIR,MEDIA_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,3 +132,6 @@ INTERNAL_IPS = ['127.0.0.1']
 LOGIN_REDIRECT_URL = 'test'
 
 LOGOUT_REDIRECT_URL = 'thanks'
+
+MEDIA_ROOT=MEDIA_DIR
+MEDIA_URL='/media/'

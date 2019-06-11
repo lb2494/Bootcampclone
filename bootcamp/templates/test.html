@@ -1,7 +1,11 @@
 {% include 'base.html' %}
 {% block content %}
+{% load staticfiles %}
 <div class="container">
+
 <h2>Logged in</h2><br>
     <h3>Welcome <b>{{user.first_name}} {{user.last_name}}</b>, to our website.</h3>
 </div>
+
+
 {% endblock %}
